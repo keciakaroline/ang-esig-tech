@@ -1,0 +1,92 @@
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header nav a {
+  color: #555;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.header nav a::after {
+  content: ">";
+  margin-left: 5px;
+}
+
+.header nav a:last-child::after {
+  content: "";
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.add-task-btn {
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filters select {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.task-table th,
+.task-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.task-table th {
+  background-color: #f2f2f2;
+}
+
+.action {
+  background: none;
+  border: none;
+  color: rgb(35, 34, 34);
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.action.delete-btn {
+  color: rgb(226, 27, 27);
+}
+
+.action:hover {
+  text-decoration: underline;
+}
+
+.task-details {
+  margin-top: 20px;
+}
+
+.task-details h2 {
+  margin-top: 0;
+}
