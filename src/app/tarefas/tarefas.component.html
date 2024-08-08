@@ -1,42 +1,76 @@
-<div>
-  <button type="button" (click)="addNewTarefa()">Nova Tarefa</button>
-  <label for="name">Nova Tarefa: </label>
-  <input id="name" [(ngModel)]="newTarefa.name" placeholder="name" />
-</div>
+<div class="container">
+  <div class="header">
+    <h1>Tarefas</h1>
+    <nav>
+      <a routerLink="/dashboard">Dashboard</a>
+      <a routerLink="/tarefas">Tarefas</a>
+    </nav>
+  </div>
 
-<h2>Tarefas</h2>
-<ul>
-  <li>Tarefa</li>
-  <li>Prioridade</li>
-  <li>Projeto</li>
-  <li>Status</li>
-  <li>Responsável</li>
-  <li>Deadline</li>
-  <li>
-    <button type="button">Editar</button>
-    <button type="button">Excluir</button>
-    <button type="button">Visualizar</button>
-  </li>
-  <li *ngFor="let tarefa of tarefas">
-    <button
-      [class.selected]="tarefa === selectedTarefa"
-      type="button"
-      (click)="onSelect(tarefa)"
-    >
-      <span class="name"> {{ tarefa.name }} </span>
-    </button>
-  </li>
-</ul>
+  <div class="controls">
+    <button class="add-task-btn" (click)="addNewTarefa()">Nova Tarefa</button>
+    <div class="filters">
+      <select>
+        <option>Projetos</option>
+      </select>
+      <select>
+        <option>Status</option>
+      </select>
+      <select>
+        <option>Todas Prioridades</option>
+      </select>
+      <select>
+        <option>Últimos 30 dias</option>
+      </select>
+    </div>
+  </div>
 
-<div *ngIf="selectedTarefa">
-  <h2>{{ selectedTarefa.name | uppercase }} Details</h2>
-  <div>id: {{ selectedTarefa.id }}</div>
-  <div>
-    <label for="tarefa-name">Tarefa name: </label>
-    <input
-      id="tarefa-name"
-      [(ngModel)]="selectedTarefa.name"
-      placeholder="name"
-    />
+  <table class="task-table">
+    <thead>
+      <tr>
+        <th>Tarefa</th>
+        <th>Prioridade</th>
+        <th>Projeto</th>
+        <th>Status</th>
+        <th>Responsável</th>
+        <th>Deadline</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let tarefa of tarefas">
+        <td>{{ tarefa.name }}</td>
+        <td>{{ tarefa.prioridade }}</td>
+        <td>{{ tarefa.projeto }}</td>
+        <td>{{ tarefa.status }}</td>
+        <td>{{ tarefa.responsavel }}</td>
+        <td>{{ tarefa.deadline }}</td>
+        <td>
+          <button class="action delete-btn">
+            <fa-icon [icon]="faTrash"></fa-icon>
+          </button>
+          <button class="action view-btn">
+            <fa-icon [icon]="faEye"></fa-icon>
+          </button>
+          <button class="action edit-btn">
+            <fa-icon [icon]="faPenSquare"></fa-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="selectedTarefa" class="task-details">
+    <h2>{{ selectedTarefa.name | uppercase }} Details</h2>
+    <div>id: {{ selectedTarefa.id }}</div>
+    <div>
+      <label for="tarefa-name">Tarefa name: </label>
+      <input
+        id="tarefa-name"
+        [(ngModel)]="selectedTarefa.name"
+        placeholder="name"
+      />
+    </div>
   </div>
 </div>
