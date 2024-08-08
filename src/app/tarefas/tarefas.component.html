@@ -1,0 +1,42 @@
+<div>
+  <button type="button" (click)="addNewTarefa()">Nova Tarefa</button>
+  <label for="name">Nova Tarefa: </label>
+  <input id="name" [(ngModel)]="newTarefa.name" placeholder="name" />
+</div>
+
+<h2>Tarefas</h2>
+<ul>
+  <li>Tarefa</li>
+  <li>Prioridade</li>
+  <li>Projeto</li>
+  <li>Status</li>
+  <li>Responsável</li>
+  <li>Deadline</li>
+  <li>
+    <button type="button">Editar</button>
+    <button type="button">Excluir</button>
+    <button type="button">Visualizar</button>
+  </li>
+  <li *ngFor="let tarefa of tarefas">
+    <button
+      [class.selected]="tarefa === selectedTarefa"
+      type="button"
+      (click)="onSelect(tarefa)"
+    >
+      <span class="name"> {{ tarefa.name }} </span>
+    </button>
+  </li>
+</ul>
+
+<div *ngIf="selectedTarefa">
+  <h2>{{ selectedTarefa.name | uppercase }} Details</h2>
+  <div>id: {{ selectedTarefa.id }}</div>
+  <div>
+    <label for="tarefa-name">Tarefa name: </label>
+    <input
+      id="tarefa-name"
+      [(ngModel)]="selectedTarefa.name"
+      placeholder="name"
+    />
+  </div>
+</div>
