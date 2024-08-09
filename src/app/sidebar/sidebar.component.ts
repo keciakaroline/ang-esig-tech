@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faList, faColumns } from '@fortawesome/free-solid-svg-icons';
+import { faList, faColumns, faBars } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidebar',
@@ -14,4 +14,5 @@ import { faList, faColumns } from '@fortawesome/free-solid-svg-icons';
 export class SidebarComponent {
   faList = faList;
   faColumns = faColumns;
+  faBars = faBars;
 }
