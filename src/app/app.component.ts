@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TarefasComponent } from './tarefas/tarefas.component';
+import { TaskComponent } from './task/task.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TarefasComponent, FontAwesomeModule],
+  imports: [RouterOutlet, TaskComponent, FontAwesomeModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

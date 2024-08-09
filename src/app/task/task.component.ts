@@ -7,13 +7,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faEye, faTrash, faPenSquare } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-tarefas',
+  selector: 'app-task',
   standalone: true,
   imports: [CommonModule, FormsModule, NgFor, NgIf, FontAwesomeModule],
-  templateUrl: './tarefas.component.html',
-  styleUrls: ['./tarefas.component.css'],
+  templateUrl: './task.component.html',
+  styleUrls: ['./task.component.css'],
 })
-export class TarefasComponent {
+export class TaskComponent {
   selectedTarefa?: Tarefa;
   tarefas: Tarefa[] = TAREFAS;
   newTarefa: Tarefa = {
