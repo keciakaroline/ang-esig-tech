@@ -8,8 +8,9 @@
 }
 
 .sidebar-header {
-  font-size: 24px;
+  font-size: 16px;
   margin-bottom: 20px;
+  background-color: #5554aa;
 }
 
 .sidebar ul {
@@ -24,4 +25,9 @@
 .sidebar ul li a {
   color: white;
   text-decoration: none;
+  padding-left: 10px;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
 }
