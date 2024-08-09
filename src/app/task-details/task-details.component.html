@@ -1,0 +1,12 @@
+<div *ngIf="selectedTarefa" class="task-details">
+  <h2>{{ selectedTarefa.name | titlecase }} Details</h2>
+  <div>id: {{ selectedTarefa.id }}</div>
+  <div>
+    <label for="tarefa-name">Tarefa name: </label>
+    <input
+      id="tarefa-name"
+      [(ngModel)]="selectedTarefa.name"
+      placeholder="name"
+    />
+  </div>
+</div>
