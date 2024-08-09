@@ -4,18 +4,28 @@ import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TAREFAS } from '../mock-tarefas';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faEye, faTrash, faPenSquare } from '@fortawesome/free-solid-svg-icons';
+import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
+import { TaskItemComponent } from '../task-item/task-item.component';
 
 @Component({
   selector: 'app-task',
   standalone: true,
-  imports: [CommonModule, FormsModule, NgFor, NgIf, FontAwesomeModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    NgFor,
+    NgIf,
+    FontAwesomeModule,
+    TaskItemComponent,
+  ],
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.css'],
 })
 export class TaskComponent {
-  selectedTarefa?: Tarefa;
+  faPlusSquare = faPlusSquare;
+
   tarefas: Tarefa[] = TAREFAS;
+
   newTarefa: Tarefa = {
     id: 0,
     name: '',
@@ -25,14 +35,6 @@ export class TaskComponent {
     responsavel: '',
     deadline: '',
   };
-
-  faEye = faEye;
-  faTrash = faTrash;
-  faPenSquare = faPenSquare;
-
-  onSelect(tarefa: Tarefa): void {
-    this.selectedTarefa = tarefa;
-  }
 
   addNewTarefa(): void {
     if (this.newTarefa.name) {
