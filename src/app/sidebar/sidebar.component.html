@@ -18,13 +18,13 @@
       <li>
         <a routerLink="/dashboard">
           <fa-icon [icon]="faColumns"></fa-icon>
-          <span *ngIf="isExpanded">Dashboard</span>
+          <span class="sub-title" *ngIf="isExpanded">Dashboard</span>
         </a>
       </li>
       <li>
         <a routerLink="/tasks">
           <fa-icon [icon]="faList"></fa-icon>
-          <span *ngIf="isExpanded">Tasks</span>
+          <span class="sub-title" *ngIf="isExpanded">Tasks</span>
         </a>
       </li>
     </ul>
