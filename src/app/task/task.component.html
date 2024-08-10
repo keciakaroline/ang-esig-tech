@@ -1,10 +1,18 @@
 <div class="task-container">
-  <div class="controls">
-    <button class="add-task-btn" (click)="addNewTarefa()">
+  <header class="task-header">
+    <div>
+      <h1>Tarefas</h1>
+      <nav class="breadcrumb">
+        <a href="#">Dashboard</a> > <span>Tarefas</span>
+      </nav>
+    </div>
+    <button class="add-task-btn" (click)="toggleModal()">
       <fa-icon [icon]="faPlusSquare"></fa-icon>
-      Nova Tarefa
+      <span>Nova Tarefa</span>
     </button>
+  </header>
 
+  <div class="controls">
     <div class="filters">
       <select>
         <option>Projetos</option>
@@ -15,29 +23,31 @@
       <select>
         <option>Todas Prioridades</option>
       </select>
-      <select>
-        <option>Últimos 30 dias</option>
-      </select>
+      <div class="date-filter">
+        Últimos 30 dias
+        <fa-icon [icon]="faCalendarAlt" size="xs"></fa-icon>
+      </div>
     </div>
+
+    <table class="task-table">
+      <thead>
+        <tr>
+          <th>Tarefa</th>
+          <th>Prioridade</th>
+          <th>Projeto</th>
+          <th>Status</th>
+          <th>Responsável</th>
+          <th>Deadline</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let tarefa of tarefas">
+          <app-task-item [tarefa]="tarefa"></app-task-item>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
-  <table class="task-table">
-    <thead>
-      <tr>
-        <th>Tarefa</th>
-        <th>Prioridade</th>
-        <th>Projeto</th>
-        <th>Status</th>
-        <th>Responsável</th>
-        <th>Deadline</th>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr *ngFor="let tarefa of tarefas">
-        <app-task-item [tarefa]="tarefa"></app-task-item>
-      </tr>
-    </tbody>
-  </table>
+  <app-task-modal *ngIf="showModal"></app-task-modal>
 </div>

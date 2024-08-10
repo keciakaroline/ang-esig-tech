@@ -4,8 +4,9 @@ import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TAREFAS } from '../mock-tarefas';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
+import { faPlusSquare, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { TaskItemComponent } from '../task-item/task-item.component';
+import { TaskModalComponent } from '../task-modal/task-modal.component';
 
 @Component({
   selector: 'app-task',
@@ -17,38 +18,19 @@ import { TaskItemComponent } from '../task-item/task-item.component';
     NgIf,
     FontAwesomeModule,
     TaskItemComponent,
+    TaskModalComponent,
   ],
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.css'],
 })
 export class TaskComponent {
   faPlusSquare = faPlusSquare;
+  faCalendarAlt = faCalendarAlt;
 
   tarefas: Tarefa[] = TAREFAS;
+  showModal: boolean = false;
 
-  newTarefa: Tarefa = {
-    id: 0,
-    name: '',
-    prioridade: '',
-    projeto: '',
-    status: '',
-    responsavel: '',
-    deadline: '',
-  };
-
-  addNewTarefa(): void {
-    if (this.newTarefa.name) {
-      const newId = this.tarefas.length + 1;
-      this.tarefas.push({ ...this.newTarefa, id: newId });
-      this.newTarefa = {
-        id: 0,
-        name: '',
-        prioridade: '',
-        projeto: '',
-        status: '',
-        responsavel: '',
-        deadline: '',
-      };
-    }
+  toggleModal(): void {
+    this.showModal = !this.showModal;
   }
 }
