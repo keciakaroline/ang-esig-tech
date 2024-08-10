@@ -11,7 +11,7 @@ import {
   faTrash,
   faPenSquare,
 } from '@fortawesome/free-solid-svg-icons';
-import { TaskItemComponent } from '../task-item/task-item.component';
+
 import { TaskModalComponent } from '../task-modal/task-modal.component';
 
 @Component({
@@ -23,7 +23,6 @@ import { TaskModalComponent } from '../task-modal/task-modal.component';
     NgFor,
     NgIf,
     FontAwesomeModule,
-    TaskItemComponent,
     TaskModalComponent,
   ],
   templateUrl: './task.component.html',
@@ -38,8 +37,6 @@ export class TaskComponent {
 
   tarefas: Tarefa[] = TAREFAS;
   showModal: boolean = false;
-
-  @Input() tarefa!: Tarefa;
 
   toggleModal(): void {
     this.showModal = !this.showModal;
