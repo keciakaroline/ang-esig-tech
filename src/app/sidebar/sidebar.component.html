@@ -1,16 +1,32 @@
-<div class="sidebar">
+<div
+  [ngClass]="{
+    'sidebar-expanded': isExpanded,
+    'sidebar-collapsed': !isExpanded
+  }"
+  class="sidebar"
+>
   <div class="sidebar-header">
-    <fa-icon [icon]="faBars"></fa-icon>
-    <h1>EsigGROUP</h1>
+    <button class="menu-btn" (click)="toggleSidebar()">
+      <fa-icon [icon]="faBars"></fa-icon>
+    </button>
+    <div class="sidebar-title" *ngIf="isExpanded">
+      <h1>Esig<strong>GROUP</strong></h1>
+    </div>
   </div>
-  <ul>
-    <li>
-      <fa-icon [icon]="faColumns"></fa-icon>
-      <a routerLink="/dashboard">Dashboard</a>
-    </li>
-    <li>
-      <fa-icon [icon]="faList"></fa-icon>
-      <a routerLink="/tasks">Tasks</a>
-    </li>
-  </ul>
+  <div class="sidebar-main">
+    <ul>
+      <li>
+        <a routerLink="/dashboard">
+          <fa-icon [icon]="faColumns"></fa-icon>
+          <span *ngIf="isExpanded">Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/tasks">
+          <fa-icon [icon]="faList"></fa-icon>
+          <span *ngIf="isExpanded">Tasks</span>
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
