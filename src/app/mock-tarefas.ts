@@ -3,7 +3,7 @@ import { Tarefa } from './Tarefa';
 export const TAREFAS: Tarefa[] = [
   {
     id: 2,
-    name: 'task 2',
+    title: 'task 2',
     prioridade: 'baixa',
     projeto: '',
     status: 'ongoing',
@@ -12,7 +12,7 @@ export const TAREFAS: Tarefa[] = [
   },
   {
     id: 3,
-    name: 'task 3',
+    title: 'task 3',
     prioridade: 'baixa',
     projeto: '',
     status: 'ongoing',
@@ -21,7 +21,7 @@ export const TAREFAS: Tarefa[] = [
   },
   {
     id: 4,
-    name: 'task 4',
+    title: 'task 4',
     prioridade: 'alta',
     projeto: '',
     status: 'stop',
@@ -30,7 +30,7 @@ export const TAREFAS: Tarefa[] = [
   },
   {
     id: 5,
-    name: 'task 5',
+    title: 'task 5',
     prioridade: 'media',
     projeto: '',
     status: 'ongoing',

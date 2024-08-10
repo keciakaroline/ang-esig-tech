@@ -1,9 +1,10 @@
 export interface Tarefa {
   id: number;
-  name: string;
+  title: string;
   prioridade: string;
   projeto: string;
-  status: string;
+  status?: string;
   responsavel: string;
   deadline: string;
+  detalhes?: string;
 }
