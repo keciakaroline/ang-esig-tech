@@ -1,11 +1,11 @@
 <div *ngIf="selectedTarefa" class="task-details">
-  <h2>{{ selectedTarefa.name | titlecase }} Details</h2>
+  <h2>{{ selectedTarefa.title }} Details</h2>
   <div>id: {{ selectedTarefa.id }}</div>
   <div>
     <label for="tarefa-name">Tarefa name: </label>
     <input
       id="tarefa-name"
-      [(ngModel)]="selectedTarefa.name"
+      [(ngModel)]="selectedTarefa.title"
       placeholder="name"
     />
   </div>
