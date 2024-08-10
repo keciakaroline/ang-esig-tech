@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Tarefa } from '../Tarefa';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TAREFAS } from '../mock-tarefas';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faPlusSquare, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faPlusSquare,
+  faCalendarAlt,
+  faEye,
+  faTrash,
+  faPenSquare,
+} from '@fortawesome/free-solid-svg-icons';
 import { TaskItemComponent } from '../task-item/task-item.component';
 import { TaskModalComponent } from '../task-modal/task-modal.component';
 
@@ -26,9 +32,14 @@ import { TaskModalComponent } from '../task-modal/task-modal.component';
 export class TaskComponent {
   faPlusSquare = faPlusSquare;
   faCalendarAlt = faCalendarAlt;
+  faEye = faEye;
+  faTrash = faTrash;
+  faPenSquare = faPenSquare;
 
   tarefas: Tarefa[] = TAREFAS;
   showModal: boolean = false;
+
+  @Input() tarefa!: Tarefa;
 
   toggleModal(): void {
     this.showModal = !this.showModal;

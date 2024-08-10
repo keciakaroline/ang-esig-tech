@@ -105,3 +105,15 @@
 .task-table tr:hover {
   background-color: #f1f1f1;
 }
+
+.action {
+  background: none;
+  border: none;
+  color: #6261b4;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.action:hover {
+  color: #3700b3;
+}
