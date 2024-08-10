@@ -134,4 +134,14 @@ button:hover {
 .btn-save {
   background-color: #6261b4;
   color: white;
+  border: none;
+  padding: 0.8rem 1.25rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.btn-save fa-icon {
+  margin-right: 0.5rem;
 }

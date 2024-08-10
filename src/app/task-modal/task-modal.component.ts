@@ -6,6 +6,7 @@ import {
   faCalendarAlt,
   faSearch,
   faTimesCircle,
+  faPlusSquare,
 } from '@fortawesome/free-solid-svg-icons';
 import { Tarefa } from '../Tarefa';
 import { TAREFAS } from '../mock-tarefas';
@@ -23,6 +24,7 @@ export class TaskModalComponent {
   faTimesCircle = faTimesCircle;
   faCalendarAlt = faCalendarAlt;
   faSearch = faSearch;
+  faPlusSquare = faPlusSquare;
 
   tarefas: Tarefa[] = TAREFAS;
   newTarefa: Tarefa = {
