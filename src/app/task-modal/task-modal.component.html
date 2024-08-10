@@ -18,52 +18,51 @@
         />
       </div>
       <div class="form-group">
-        <label for="details">Detalhes da Tarefa</label>
         <textarea
           id="details"
           name="details"
+          rows="5"
           [(ngModel)]="newTarefa.detalhes"
           placeholder="Detalhes da Tarefa"
         ></textarea>
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label for="deadline">Deadline</label>
           <input
             id="deadline"
             name="deadline"
             [(ngModel)]="newTarefa.deadline"
             type="date"
+            placeholder="Deadline"
           />
         </div>
         <div class="form-group">
-          <label for="prioridade">Prioridade</label>
           <select
             id="prioridade"
             name="prioridade"
             [(ngModel)]="newTarefa.prioridade"
           >
+            <option value="" disabled selected>Prioridade</option>
             <option value="alta">Alta</option>
             <option value="média">Média</option>
             <option value="baixa">Baixa</option>
           </select>
         </div>
       </div>
-      <div class="form-group">
-        <label for="responsavel">Responsáveis</label>
+      <div class="form-group input-group">
         <input
           id="responsavel"
           name="responsavel"
           [(ngModel)]="newTarefa.responsavel"
           placeholder="Responsáveis"
         />
-        <fa-icon [icon]="faSearch"></fa-icon>
+        <fa-icon [icon]="faSearch" class="input-icon"></fa-icon>
       </div>
       <div class="form-group">
-        <label>Anexar arquivo</label>
         <div class="upload">
-          <input type="file" />
-          <p>Arraste o arquivo aqui ou clique para selecionar</p>
+          <span>Anexar arquivo</span>
+          <input type="file" value placeholder="Anexar" />
+          <p>A better way to tell which species are vulnerable</p>
         </div>
       </div>
       <div class="modal-footer">
