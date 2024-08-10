@@ -41,4 +41,8 @@ export class TaskComponent {
   toggleModal(): void {
     this.showModal = !this.showModal;
   }
+
+  onModalClosed(): void {
+    this.showModal = false; // Close the modal
+  }
 }

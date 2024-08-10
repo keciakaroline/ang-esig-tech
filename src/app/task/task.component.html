@@ -65,5 +65,8 @@
       </tbody>
     </table>
   </div>
-  <app-task-modal *ngIf="showModal"></app-task-modal>
+  <app-task-modal
+    *ngIf="showModal"
+    (modalClosed)="onModalClosed()"
+  ></app-task-modal>
 </div>
