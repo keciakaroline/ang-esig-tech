@@ -77,6 +77,23 @@ button:hover {
   color: #333;
 }
 
+.title-input {
+  border: 1px solid #ddd;
+  border-radius: 0.375rem;
+  font-size: 14px;
+  color: #333;
+}
+
+.title-input input {
+  border: none;
+}
+
+.title-input legend {
+  color: #333;
+  padding: 3px 6px;
+  margin: 0 0.625rem;
+}
+
 .form-row {
   display: flex;
   justify-content: space-between;
@@ -99,12 +116,30 @@ button:hover {
   color: #000;
 }
 
+input[type="file"] {
+  display: none;
+}
+
+.upload label {
+  color: #000;
+  margin: 0.3125rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.upload fa-icon {
+  margin: 10px;
+}
+
 .upload {
-  /* background: #f9f9f9; */
-  background: url("https://static.thenounproject.com/png/101791-200.png")
-    no-repeat left;
+  background: #f9f9f9;
   padding: 1.25rem;
-  border: 2px dashed #ddd;
+  border: 1px solid #ddd;
   text-align: center;
   border-radius: 0.5rem;
   cursor: pointer;

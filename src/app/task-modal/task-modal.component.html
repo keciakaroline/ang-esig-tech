@@ -7,8 +7,8 @@
       </button>
     </div>
     <form>
-      <div class="form-group">
-        <label for="title">Título da Tarefa</label>
+      <fieldset class="form-group title-input">
+        <legend for="title">Título da Tarefa</legend>
         <input
           id="title"
           name="title"
@@ -16,7 +16,7 @@
           type="text"
           placeholder="Título da Tarefa"
         />
-      </div>
+      </fieldset>
       <div class="form-group">
         <textarea
           id="details"
@@ -58,13 +58,18 @@
         />
         <fa-icon [icon]="faSearch" class="input-icon"></fa-icon>
       </div>
+
       <div class="form-group">
         <div class="upload">
-          <span>Anexar arquivo</span>
-          <input type="file" value placeholder="Anexar" />
+          <input type="file" id="file" placeholder="Anexar" accept="*" />
+          <label for="file">
+            <fa-icon [icon]="faUpload" size="lg"></fa-icon>
+            <span>Anexar arquivo</span>
+          </label>
           <p>A better way to tell which species are vulnerable</p>
         </div>
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-cancel" (click)="closeModal()">
           Cancelar
