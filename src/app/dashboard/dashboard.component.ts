@@ -79,6 +79,7 @@ export class DashboardComponent implements OnInit {
         },
         scales: {
           x: {
+            beginAtZero: true,
             grid: {
               display: false,
             },
