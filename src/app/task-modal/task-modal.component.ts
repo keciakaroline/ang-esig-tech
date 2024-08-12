@@ -10,7 +10,7 @@ import {
   faUpload,
 } from '@fortawesome/free-solid-svg-icons';
 import { Tarefa } from '../Tarefa';
-import { TAREFAS } from '../mock-tarefas';
+import { DataServiceService } from '../data-service.service';
 
 @Component({
   selector: 'app-task-modal',
@@ -21,6 +21,7 @@ import { TAREFAS } from '../mock-tarefas';
 })
 export class TaskModalComponent {
   @Output() modalClosed = new EventEmitter<void>();
+  @Output() tarefaAdded = new EventEmitter<Tarefa>();
 
   faTimesCircle = faTimesCircle;
   faCalendarAlt = faCalendarAlt;
@@ -28,7 +29,6 @@ export class TaskModalComponent {
   faPlusSquare = faPlusSquare;
   faUpload = faUpload;
 
-  tarefas: Tarefa[] = TAREFAS;
   newTarefa: Tarefa = {
     id: 0,
     title: '',
@@ -40,21 +40,10 @@ export class TaskModalComponent {
     detalhes: '',
   };
 
+  constructor(private dataService: DataServiceService) {}
+
   addNewTarefa(): void {
-    if (this.newTarefa.title) {
-      const newId = this.tarefas.length + 1;
-      this.tarefas.push({ ...this.newTarefa, id: newId });
-      this.newTarefa = {
-        id: 0,
-        title: '',
-        prioridade: '',
-        projeto: '',
-        status: '',
-        responsavel: '',
-        deadline: '',
-        detalhes: '',
-      };
-    }
+    console.log('Add New task:');
   }
 
   closeModal(): void {
