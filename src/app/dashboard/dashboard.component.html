@@ -1,1 +1,53 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <div class="greeting">
+      <h1>Olá {{ userName }},</h1>
+      <p>Bem-vindo ao seu gestor de tarefas!</p>
+    </div>
+
+    <button class="add-task-btn">
+      <fa-icon [icon]="faPlusSquare"></fa-icon>
+      <span>Nova Tarefa</span>
+    </button>
+  </header>
+
+  <div class="status-blocks">
+    <div class="status-block todo">
+      <div>
+        <h2>{{ todoCount }}</h2>
+        <p>to do</p>
+      </div>
+      <fa-icon [icon]="faSpinner" class="icon" size="lg"></fa-icon>
+    </div>
+    <div class="status-block doing">
+      <div>
+        <h2>{{ doingCount }}</h2>
+        <div class="delayed">
+          <fa-icon [icon]="faCircle" class="dot"></fa-icon>
+          <h5>{{ delayedCount }} tarefa em atraso!</h5>
+        </div>
+        <p>doing</p>
+      </div>
+      <fa-icon [icon]="faTerminal" class="icon" size="lg"></fa-icon>
+    </div>
+
+    <div class="status-block done">
+      <div>
+        <h2>{{ doneCount }}</h2>
+        <p>done</p>
+      </div>
+      <fa-icon [icon]="faCheckSquare" class="icon" size="lg"></fa-icon>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <h2># Tarefas concluídas por dia</h2>
+    <div class="chart-wrapper">
+      <div class="date-filter">
+        Últimos 15 dias
+        <fa-icon [icon]="faCalendarAlt" size="lg"></fa-icon>
+      </div>
+      <canvas id="tasksChart"></canvas>
+    </div>
+  </div>
+</div>
