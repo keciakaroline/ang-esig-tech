@@ -52,65 +52,67 @@ export class DashboardComponent implements OnInit {
   }
 
   initializeChart(): void {
-    Chart.register(...registerables);
-    const ctx = document.getElementById('tasksChart') as HTMLCanvasElement;
-    new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: [
-          '01/06',
-          '02/06',
-          '03/06',
-          '04/06',
-          '05/06',
-          '06/06',
-          '07/06',
-          '08/06',
-          '09/06',
-          '10/06',
-          '11/06',
-          '12/06',
-          '13/06',
-          '14/06',
-          '15/06',
-        ],
-        datasets: [
-          {
-            label: 'Tarefas Concluídas',
-            data: [1, 2, 3, 3, 2, 2, 2, 2, 2, 3, 3, 3, 2, 3, 2],
-            borderColor: '#4ad894',
-            fill: false,
-            tension: 0.5,
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            display: false,
-          },
+    if (typeof document !== 'undefined') {
+      Chart.register(...registerables);
+      const ctx = document.getElementById('tasksChart') as HTMLCanvasElement;
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: [
+            '01/06',
+            '02/06',
+            '03/06',
+            '04/06',
+            '05/06',
+            '06/06',
+            '07/06',
+            '08/06',
+            '09/06',
+            '10/06',
+            '11/06',
+            '12/06',
+            '13/06',
+            '14/06',
+            '15/06',
+          ],
+          datasets: [
+            {
+              label: 'Tarefas Concluídas',
+              data: [1, 2, 3, 3, 2, 2, 2, 2, 2, 3, 3, 3, 2, 3, 2],
+              borderColor: '#4ad894',
+              fill: false,
+              tension: 0.5,
+            },
+          ],
         },
-        scales: {
-          x: {
-            beginAtZero: true,
-            grid: {
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
               display: false,
             },
           },
-          y: {
-            beginAtZero: true,
-            grid: {
-              display: true,
+          scales: {
+            x: {
+              beginAtZero: true,
+              grid: {
+                display: false,
+              },
             },
-            min: 0,
-            max: 5,
-            ticks: {
-              stepSize: 1,
+            y: {
+              beginAtZero: true,
+              grid: {
+                display: true,
+              },
+              min: 0,
+              max: 5,
+              ticks: {
+                stepSize: 1,
+              },
             },
           },
         },
-      },
-    });
+      });
+    }
   }
 }
