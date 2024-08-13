@@ -12,13 +12,13 @@ Para instalar as dependências localmente, execute o comando: `npm i --legacy-pe
 
 ## Servidor de Desenvolvimento
 
-Para iniciar o servidor de desenvolvimento, execute `ng serve`. Acesse `http://localhost:4200/` no navegador. A aplicação será recarregada automaticamente sempre que houver mudanças nos arquivos de origem.
+Para iniciar o servidor de desenvolvimento, execute `ng serve` ou `npm run start`. Acesse `http://localhost:4200/` no navegador. A aplicação será recarregada automaticamente sempre que houver mudanças nos arquivos de origem.
 
 Você também pode executar `ng serve --open` para abrir o navegador automaticamente com a aplicação em execução.
 
 ## Executando Testes Unitários
 
-Para executar os testes unitários, utilize o comando: `ng test`. Os testes serão executados via [Karma](https://karma-runner.github.io).
+Para executar os testes unitários, utilize o comando: `ng test` ou `npm run test`. Os testes serão executados via [Karma](https://karma-runner.github.io).
 
 ## Sobre a Aplicação
 
