@@ -101,6 +101,8 @@
 .task-table .task-item .task-title,
 .task-table .task-item .task-projeto {
   text-decoration: underline;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .task-table .task-item .task-status .status-label,
@@ -112,7 +114,6 @@
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
   max-width: 3.125rem;
   font-size: 12px;
 }
