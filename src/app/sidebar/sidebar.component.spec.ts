@@ -19,4 +19,27 @@ describe('SidebarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should toggle the sidebar expansion', () => {
+    expect(component.isExpanded).toBeFalse();
+
+    component.toggleSidebar();
+    expect(component.isExpanded).toBeTrue();
+  });
+
+  it('should update the CSS variable on toggle sidebar', () => {
+    spyOn(document.documentElement.style, 'setProperty');
+
+    component.toggleSidebar();
+    expect(document.documentElement.style.setProperty).toHaveBeenCalledWith(
+      '--sidebar-width',
+      '300px'
+    );
+
+    component.toggleSidebar();
+    expect(document.documentElement.style.setProperty).toHaveBeenCalledWith(
+      '--sidebar-width',
+      '80px'
+    );
+  });
 });
