@@ -15,7 +15,7 @@ export class InMemoryDataService implements InMemoryDbService {
         projeto: 'Gateway of Pacific',
         status: 'Concluido',
         responsavel: 'Miles, Esther',
-        deadline: '2024-08-11',
+        deadline: 'Wed 11 Aug',
         detalhes: 'Task 1 details',
       },
       {
@@ -25,7 +25,7 @@ export class InMemoryDataService implements InMemoryDbService {
         projeto: 'Renoir Hotel',
         status: 'Concluido',
         responsavel: 'Miles, Esther',
-        deadline: '2024-08-11',
+        deadline: 'Wed 11 Aug',
         detalhes: 'Task 2 details',
       },
       {
@@ -35,7 +35,7 @@ export class InMemoryDataService implements InMemoryDbService {
         projeto: 'Grand Hyatt Union',
         status: 'Concluido',
         responsavel: 'Miles, Esther',
-        deadline: '2024-08-11',
+        deadline: 'Wed 11 Aug',
         detalhes: 'Task 3 details',
       },
       {
@@ -45,7 +45,7 @@ export class InMemoryDataService implements InMemoryDbService {
         projeto: '801 Brannan',
         status: 'Concluido',
         responsavel: 'Miles, Esther',
-        deadline: '2024-08-11',
+        deadline: 'Wed 11 Aug',
         detalhes: 'Task 3 details',
       },
     ];

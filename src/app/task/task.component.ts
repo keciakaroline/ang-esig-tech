@@ -56,4 +56,23 @@ export class TaskComponent implements OnInit {
   onModalClosed(): void {
     this.showModal = false;
   }
+
+  getAbbreviatedStatus(status: string = '', maxLength: number = 5): string {
+    return status.length > maxLength
+      ? status.slice(0, maxLength) + '...'
+      : status;
+  }
+
+  getPrioridadeColor(status: string = ''): string {
+    switch (status.toLowerCase()) {
+      case 'alta':
+        return '#ff1414';
+      case 'média':
+        return '#ffa16c';
+      case 'baixa':
+        return '#14b9ff';
+      default:
+        return '#6c757d';
+    }
+  }
 }

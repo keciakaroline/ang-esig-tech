@@ -25,46 +25,61 @@
       </select>
       <div class="date-filter">
         Últimos 30 dias
-        <fa-icon [icon]="faCalendarAlt" size="xs"></fa-icon>
+        <fa-icon [icon]="faCalendarAlt" size="lg"></fa-icon>
       </div>
     </div>
 
-    <table class="task-table">
-      <thead>
-        <tr>
-          <th>Tarefa</th>
-          <th>Prioridade</th>
-          <th>Projeto</th>
-          <th>Status</th>
-          <th>Responsável</th>
-          <th>Deadline</th>
-          <th></th>
-        </tr>
-      </thead>
+    <div class="table-responsive">
+      <table class="task-table">
+        <thead>
+          <tr>
+            <th>Tarefa</th>
+            <th>Prioridade</th>
+            <th>Projeto</th>
+            <th>Status</th>
+            <th>Responsável</th>
+            <th>Deadline</th>
+            <th></th>
+          </tr>
+        </thead>
 
-      <tbody>
-        <tr *ngFor="let tarefa of tarefas">
-          <td>{{ tarefa.title }}</td>
-          <td>{{ tarefa.prioridade }}</td>
-          <td>{{ tarefa.projeto }}</td>
-          <td>{{ tarefa.status }}</td>
-          <td>{{ tarefa.responsavel }}</td>
-          <td>{{ tarefa.deadline }}</td>
-          <td>
-            <button class="action delete-btn">
-              <fa-icon [icon]="faTrash"></fa-icon>
-            </button>
-            <button class="action view-btn">
-              <fa-icon [icon]="faEye"></fa-icon>
-            </button>
-            <button class="action edit-btn">
-              <fa-icon [icon]="faPenSquare"></fa-icon>
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+        <tbody>
+          <tr *ngFor="let tarefa of tarefas" class="task-item">
+            <td class="task-title">{{ tarefa.title }}</td>
+            <td class="task-prioridade">
+              <span
+                class="prioridade-label"
+                [ngStyle]="{
+                  'background-color': getPrioridadeColor(tarefa.prioridade)
+                }"
+                >{{ getAbbreviatedStatus(tarefa.prioridade) }}
+              </span>
+            </td>
+            <td class="task-projeto">{{ tarefa.projeto }}</td>
+            <td class="task-status">
+              <span class="status-label">{{
+                getAbbreviatedStatus(tarefa.status)
+              }}</span>
+            </td>
+            <td class="task-responsavel">{{ tarefa.responsavel }}</td>
+            <td class="deadline">{{ tarefa.deadline }}</td>
+            <td class="action-btn-group">
+              <button class="action delete-btn">
+                <fa-icon [icon]="faTrash"></fa-icon>
+              </button>
+              <button class="action view-btn">
+                <fa-icon [icon]="faEye"></fa-icon>
+              </button>
+              <button class="action edit-btn">
+                <fa-icon [icon]="faPenSquare"></fa-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+
   <app-task-modal
     *ngIf="showModal"
     (modalClosed)="onModalClosed()"
