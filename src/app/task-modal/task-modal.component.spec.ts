@@ -1,23 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestBed } from '@angular/core/testing';
 import { TaskModalComponent } from './task-modal.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule } from '@angular/forms';
 
 describe('TaskModalComponent', () => {
-  let component: TaskModalComponent;
-  let fixture: ComponentFixture<TaskModalComponent>;
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TaskModalComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(TaskModalComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+      imports: [TaskModalComponent, HttpClientTestingModule, FormsModule],
+    }).compileComponents();
   });
 
   it('should create', () => {
+    const fixture = TestBed.createComponent(TaskModalComponent);
+    const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
 });
