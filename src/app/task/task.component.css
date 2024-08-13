@@ -183,4 +183,16 @@
     align-items: stretch;
     flex-wrap: wrap;
   }
+
+  .add-task-btn {
+    background-color: #6261b4;
+    color: white;
+    border: none;
+    padding: 0.8rem 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+  }
 }
