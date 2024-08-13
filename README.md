@@ -1,19 +1,33 @@
 # AngularEsigTech
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) versão 17.3.8, utilizando a versão LTS do Angular.
 
-## App Deployment online - Vercel
+## Deploy da Aplicação Online - Vercel
 
-https://esig-group-tech.vercel.app/
+A aplicação está disponível online em: `https://esig-group-tech.vercel.app/`
 
-## Development server
+## Instalação Local
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para instalar as dependências localmente, execute o comando: `npm i --legacy-peer-deps`
 
-## Build
+## Servidor de Desenvolvimento
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Para iniciar o servidor de desenvolvimento, execute `ng serve`. Acesse `http://localhost:4200/` no navegador. A aplicação será recarregada automaticamente sempre que houver mudanças nos arquivos de origem.
 
-## Running unit tests
+Você também pode executar `ng serve --open` para abrir o navegador automaticamente com a aplicação em execução.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Executando Testes Unitários
+
+Para executar os testes unitários, utilize o comando: `ng test`. Os testes serão executados via [Karma](https://karma-runner.github.io).
+
+## Sobre a Aplicação
+
+- Foi criado uma aplicação SPA utilizando Angular na sua versão mais recente estável. O projeto foi criado usando como modelo o layout proposto no Figma: `https://www.figma.com/proto/x0fSZ0pQyClJdFAuYoxQq2/Test---Esig-Grup?type=design&node-id=15-341&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A4`, prezando sempre pela experiencia do usuário e pela responsividade da aplicação, mostrando funcionalidade em telas grandes e pequenas.
+
+- Foi utilizado a lib `In Memory DB` para mockar os dados da aplicação.
+
+- O projeto foi publicado no servidor Web (Vercel) - letra D
+
+- Foi adicionado testes unitários para os componentes do projeto - letra F
+
+- O sidebar da aplicação possui uma funcionalidade de expansão e retração - letra H
