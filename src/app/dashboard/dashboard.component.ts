@@ -10,11 +10,13 @@ import {
   faCheckSquare,
   faCircle,
 } from '@fortawesome/free-solid-svg-icons';
+import { ModalServiceService } from '../modal-service.service';
+import { TaskModalComponent } from '../task-modal/task-modal.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule, TaskModalComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
@@ -33,8 +35,20 @@ export class DashboardComponent implements OnInit {
   doneCount = 64; //hard-coded
   delayedCount = 1; //hard-coded
 
+  showModal$ = this.modalService.isVisible$;
+
+  constructor(private modalService: ModalServiceService) {}
+
   ngOnInit(): void {
     this.initializeChart();
+  }
+
+  toggleModal(): void {
+    this.modalService.toggleModal();
+  }
+
+  onModalClosed(): void {
+    this.modalService.closeModal();
   }
 
   initializeChart(): void {

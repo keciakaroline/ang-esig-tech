@@ -5,7 +5,7 @@
       <p>Bem-vindo ao seu gestor de tarefas!</p>
     </div>
 
-    <button class="add-task-btn">
+    <button class="add-task-btn" (click)="toggleModal()">
       <fa-icon [icon]="faPlusSquare"></fa-icon>
       <span>Nova Tarefa</span>
     </button>
@@ -49,5 +49,9 @@
       </div>
       <canvas id="tasksChart"></canvas>
     </div>
+  </div>
+
+  <div *ngIf="showModal$ | async">
+    <app-task-modal (modalClosed)="onModalClosed()"></app-task-modal>
   </div>
 </div>

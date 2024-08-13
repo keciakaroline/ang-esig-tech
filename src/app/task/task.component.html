@@ -80,8 +80,7 @@
     </div>
   </div>
 
-  <app-task-modal
-    *ngIf="showModal"
-    (modalClosed)="onModalClosed()"
-  ></app-task-modal>
+  <div *ngIf="showModal$ | async">
+    <app-task-modal (modalClosed)="onModalClosed()"></app-task-modal>
+  </div>
 </div>

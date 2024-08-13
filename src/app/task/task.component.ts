@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalServiceService } from '../modal-service.service';
 import { Tarefa } from '../Tarefa';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -35,9 +36,12 @@ export class TaskComponent implements OnInit {
   faPenSquare = faPenSquare;
 
   tarefas: Tarefa[] = [];
-  showModal: boolean = false;
+  showModal$ = this.modalService.isVisible$;
 
-  constructor(private dataService: DataServiceService) {}
+  constructor(
+    private dataService: DataServiceService,
+    private modalService: ModalServiceService
+  ) {}
 
   ngOnInit(): void {
     this.getTarefas();
@@ -50,11 +54,11 @@ export class TaskComponent implements OnInit {
   }
 
   toggleModal(): void {
-    this.showModal = !this.showModal;
+    this.modalService.toggleModal();
   }
 
   onModalClosed(): void {
-    this.showModal = false;
+    this.modalService.closeModal();
   }
 
   getAbbreviatedStatus(status: string = '', maxLength: number = 5): string {
